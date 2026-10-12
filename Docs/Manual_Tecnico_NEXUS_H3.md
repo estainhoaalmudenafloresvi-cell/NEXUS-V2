@@ -1,4 +1,4 @@
-MANUAL TÉCNICO Y DE USUARIO
+﻿MANUAL TÉCNICO Y DE USUARIO
 PROYECTO NEXUS v1.0 - CADETE EXPLORER
 
 Lenguaje: C#
@@ -1021,3 +1021,40 @@ NEXUS v1.0 integra distintas herramientas de C# para crear un juego de exploraci
 El manual describe tanto el uso del programa como la lógica de sus componentes principales. También identifica limitaciones del código actual que pueden considerarse en futuras mejoras. Comprender estas partes facilita el mantenimiento del proyecto y la explicación de su funcionamiento durante una evaluación.
 
 FIN DEL MANUAL TÉCNICO Y DE USUARIO - NEXUS v1.0
+
+
+
+DIAGNÓSTICO DE APRENDIZAJE: PROMPT ESPEJO
+Evaluación de la Misión: NEXUS — De Código a Conocimiento
+1. Fortalezas demostradas
+• Claridad en los objetivos finales: Identificaste con precisión tus necesidades de aprendizaje enfocadas al examen oral y escrito, solicitando adaptar la documentación al formato exacto en el que aprendes mejor (explicaciones continuas, sin sintaxis Markdown compleja como asteriscos o almohadillas, y orientadas al desarrollo en papel).
+• Manejo operativo de herramientas: Demostraste habilidad práctica para la navegación por carpetas del proyecto (docs/), guardado adecuado de archivos con extensiones personalizadas (.md), y el uso de entornos gráficos de control de versiones con GitHub Desktop (ejecución exitosa de Commit y Push origin).
+• Reconocimiento de tu propio estilo de aprendizaje: Expresaste abiertamente la metodología con la que procesas mejor la información (unificación de bloques de código con explicación renglón por renglón en texto corrido y directo).
+2. Falencias observadas
+• Dependencia de la generación externa: A lo largo de la interacción delegaste la redacción de la teoría, las explicaciones del código, la simplificación del lenguaje y la formulación de respuestas de examen. No redactaste explicaciones conceptuales con tus propias palabras durante la sesión.
+• Evitación del autodiagnóstico activo: Al plantearse las 4 preguntas de control sobre la lógica del código (uso de : base, override, cortocircuito en PuedeDespegar y serialización JSON), optaste por solicitar las respuestas en lugar de intentar responderlas por tu cuenta.
+• Verificación pasiva: Validaste el proceso mediante capturas de pantalla de la interfaz gráfica de Git, pero no realizaste pruebas de ejecución o trazabilidad escrita de forma autónoma durante el diálogo.
+3. Diagnóstico del Hito 3
+Concepto de POO / C#ClasificaciónJustificaciónPOO / Clases y ObjetosComprensión parcialReconoces la estructura general de las clases del proyecto (Personaje, Cadete, Robot, Enemigo, Mapa) y su distinción práctica (plano vs. instancia), aunque la definición teórica fue provista por el asistente.Constructores y baseComprensión parcialEntiendes la ubicación del constructor y el traspaso de parámetros a la clase base (: base(nombre, 100, 25)), pero se requiere mayor práctica redactando la firma a mano.EncapsulamientoComprensión parcialIdentificas el uso de campos private en matrices y propiedades públicas { get; set; }, pero no se evidenció el desarrollo independiente de validaciones dentro del bloque set.HerenciaComprensión demostradaComprendes claramente la relación "es un..." y la sintaxis : Personaje para derivar atributos y métodos de la clase padre.PolimorfismoComprensión parcialIdentificas que AnalizarEntidad() responde diferente según la clase que la ejecute mediante override, pero no se evaluó la diferencia frente a sobrecarga de métodos.Interfaces (Interfaces)Evidencia insuficienteNo se presentó código específico de interfaces ni ejercicios en el diálogo actual para comprobar este dominio.Listas Genéricas (List<T>)Comprensión parcialIdentificas su uso dinámico en el Inventario y su inicialización para evitar referencias nulas (NullReferenceException), pero faltó ejercitar métodos de manipulación (.Add, .Remove).LINQEvidencia insuficienteSe incluyó teoría conceptual en la documentación, pero no realizaste consultas prácticas ni sintaxis declarativa por cuenta propia.4. Mi forma de aprender
+• Estrategia de estudio: Investigas solicitando la reestructuración de la información hasta que se ajuste a tu formato mental de procesamiento (texto corrido, sin símbolos superfluos y con código unificado).
+• Resolución de dudas: Prefieres validar tus pasos mediante confirmación visual (capturas de pantalla) para asegurarte de que la estructura de carpetas y el estado de Git sean los correctos antes de avanzar. 
+PNG
+• Punto a mejorar: Tiendes a delegar la formulación de explicaciones al modelo en lugar de intentar ensayar la respuesta oral o escrita tú mismo. Para consolidar el conocimiento para el examen a mano, debes pasar de la lectura pasiva a la escritura activa.
+5. Plan de estudio (Top 5 Prioridades + Ejercicios Prácticos)
+Prioridad 1: Firma de Constructores y uso de base
+• Ejercicio práctico: Toma una hoja de papel y escribe a mano la clase Cadete con un constructor que reciba nombre y edad, invocando al constructor base de Personaje con 120 de vida y 30 de ataque.
+Prioridad 2: Implementación de Polimorfismo con abstract y override
+• Ejercicio práctico: Escribe a mano una nueva clase llamada NaveHostil que herede de Personaje y reescriba el método AnalizarEntidad() imprimiendo el mensaje de alerta correspondiente.
+Prioridad 3: Lógica de evaluación con Cortocircuito (&&)
+• Ejercicio práctico: Haz la prueba de escritorio en papel del método PuedeDespegar() para tres casos distintos:
+1. Edad = 17, Energia = 50
+2. Edad = 19, Energia = 10
+3. Edad = 20, Energia = 30
+Prioridad 4: Manipulación de Listas Genéricas (List<string>)
+• Ejercicio práctico: Escribe las líneas de código exactas en C# para instanciar la lista Inventario, agregarle dos ítems ("Batería", "Pistola Laser") y eliminar el primer ítem.
+Prioridad 5: Persistencia de Datos (Serialización JSON)
+• Ejercicio práctico: Escribe de memoria las dos líneas clave de C# necesarias para tomar el objeto cadete y guardarlo en el archivo "partida_nexus.json" usando JsonSerializer.
+6. Conclusión
+Has demostrado una excelente capacidad de organización del proyecto, estructuración de archivos y gestión de repositorio local/remoto. Conoces la función de cada pieza del código de NEXUS y su flujo general.
+Sin embargo, para asegurar la calificación máxima en un examen escrito u oral, debes transicionar de la comprensión lectora al desarrollo autónomo. En el examen deberías ser capaz de escribir a mano las firmas de herencia (: Personaje), las llamadas a base(...), los métodos con override, y explicar el comportamiento de los operadores de cortocircuito sin depender de plantillas. Revisa las preguntas del plan de estudio escribiendo las respuestas en papel antes de tu evaluación.
+
