@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>NEXUS</AssemblyName>
+    <RootNamespace>NEXUS</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Assets\Planets\*.png" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Assets\Audio\*.wav" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Assets\UI\*.png" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="SQL\*.sql" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.3" />
+  </ItemGroup>
+</Project>

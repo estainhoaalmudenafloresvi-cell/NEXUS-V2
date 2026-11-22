@@ -1,0 +1,39 @@
+name: NEXUS - Compilación automática
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'NEXUS/**', 'NEXUS.sln', '.github/workflows/nexus-ci.yml' ]
+  pull_request:
+    branches: [ main ]
+    paths: [ 'NEXUS/**', 'NEXUS.sln', '.github/workflows/nexus-ci.yml' ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Restaurar y compilar NEXUS
+    runs-on: windows-latest
+    steps:
+      - name: Obtener el código
+        uses: actions/checkout@v4
+      - name: Configurar .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Mostrar SDK
+        run: dotnet --info
+      - name: Restaurar dependencias
+        run: dotnet restore NEXUS.sln
+      - name: Compilar en Release
+        run: dotnet build NEXUS.sln --configuration Release --no-restore
+      - name: Guardar artefacto de compilación
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nexus-build-${{ github.run_number }}
+          path: NEXUS/bin/Release/
+          if-no-files-found: ignore
+          retention-days: 14
